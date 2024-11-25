@@ -1,4 +1,11 @@
 
+/* este estilo es paque todos los contenedores tengan un alto de 100vh*/
+
+.container-vh{
+    height: 100vh;
+}
+
+
 /* estilo del nav */
 #navbarNav{
     min-width: 30em;
@@ -18,9 +25,11 @@
 }
 
 .boton-login{
+    width: 116px;
+    height: 30px;
     outline: none;
-    border-width: 1px;
-    border-radius: 8px;
+    border:none;
+    border-radius: 10px;
 }
 
 .container-btn-login{
@@ -72,8 +81,8 @@
     color: #FFFFFF;
 }
 
-.col-des{
-    margin-top: 6rem;
+.card-body .title, .titlecolor{
+    color: #2c2c2c;
 }
 
 /* estilos de las cards de informacion */
@@ -88,6 +97,38 @@
     border-color: #d9d9d9;
 
 }
+
+.container-vh{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* estilos del footer */
+
+.icon{
+    padding: 3px;
+    margin: 2px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #2c2c2c;
+}
+
+.contenedor-icon{
+    padding: 5px;
+    height: 30%;
+}
+
+.list{
+    text-decoration: none;
+    color: #2c2c2c;
+}
+
+.list:hover{
+    color: #AF7AC5;
+}
+
 
 
 
