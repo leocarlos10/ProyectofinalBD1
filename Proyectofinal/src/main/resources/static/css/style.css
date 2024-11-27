@@ -1,13 +1,14 @@
 
 /* este estilo es paque todos los contenedores tengan un alto de 100vh*/
 
+
 .container-vh{
     height: 100vh;
 }
 
-
 /* estilo del nav */
 #navbarNav{
+
     min-width: 35em;
     max-width: 40rem;
     
@@ -24,21 +25,26 @@
     color: #FFFFFF;
 }
 
-.boton-login{
-    width: 116px;
-    height: 30px;
-    outline: none;
-    border:none;
+.link-admin{
+    padding: 1px 7px 1px 7px ;
     border-radius: 10px;
+    text-decoration: none;
+    color: #2c2c2c;
+    background-color: #FFFFFF;
+}
+
+.link-admin:hover{
+    color: #AF7AC5;
 }
 
 .container-btn-login{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-left: 2rem;
+    margin-left: 1rem;
     min-width: 10rem;
     max-width: 30rem;
+    
 }
 
 .container-fluid{
@@ -54,8 +60,8 @@
 
 .container-logo{
     display: flex;
-    max-width: 15rem;
-    margin-left: 1rem;
+    max-width: 13rem;
+    
 }
 
 .container-descripcion{
@@ -144,7 +150,20 @@
     background-position: center;
     background-size: cover;
     border-radius: 8px;
+   
   }
+
+  /* estilos formulario registro */
+
+  .container-form{
+    margin-top: 1rem;
+  }
+
+  .container-form-login{
+    min-height: 100vh;
+  }
+
+ 
   
 
 

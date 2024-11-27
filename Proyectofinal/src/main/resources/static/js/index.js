@@ -1,5 +1,4 @@
-
-// agregamos un evento ala imagen para que cuando den click reinicie la pagina
+// Codigo anterior
 
 // document.addEventListener('DOMContentLoaded',(event)=>{
 //     const imagen = document.querySelector('.logo');
@@ -205,79 +204,110 @@
 // funcion para cargar el modulo
 // hacemos la funcion para cambiar los modulos.
 
+document.addEventListener("DOMContentLoaded", (event) => {
+  // primero obtenemos el contenedor principal
+  const contenedor = document.querySelector(".contenedor-pri");
+  // creamos un objeto que va a contener los botones que van a tener los eventos
+  const botones = {
+    inicio: document.querySelector("#inicio"),
+    solicitarcita: document.querySelector("#sol"),
+    cursos: document.querySelector("#cursos"),
+  };
 
+  // luego creamos la funcion que carga el modulo
+  const cargarModulo = async (ruta) => {
+    try {
+      const response = await fetch(ruta);
 
+      if (!response.ok) {
+        console.log(`Error al cargar el modulo ${ruta}`);
+      }
 
-document.addEventListener('DOMContentLoaded',(event)=>{
-    // primero obtenemos el contenedor principal
-    const contenedor = document.querySelector('.contenedor-pri');
-    // creamos un objeto que va a contener los botones que van a tener los eventos
-    const botones = {
-        inicio: document.querySelector('#inicio'), 
-        solicitarcita : document.querySelector('#sol'),
-        cursos : document.querySelector('#cursos')  
+      // convertimos la respuesta a texto
+      const html = await response.text();
+      contenedor.innerHTML = html;
+      // guardamos el modulo actual en el localstorag
+      localStorage.setItem("moduloActual", ruta);
+      // con este metodo agregamos la logica correspondiente a cada modulo.
+      inicializarModulos(ruta);
+    } catch (error) {
+      console.log(`Error al cargar el modulo ${ruta} ${error}`);
+    }
+  };
+
+  // cargamos los eventos respectivos para cada boton
+  botones.solicitarcita.addEventListener("click", () =>
+    cargarModulo("modulos/solicitarcita.html")
+  );
+  botones.cursos.addEventListener("click", () =>
+    cargarModulo("modulos/cursos.html")
+  );
+  botones.inicio.addEventListener("click", () =>
+    cargarModulo("modulos/inicio.html")
+  );
+
+  // cargar el estado guardado al recargar la pagina
+  const moduloActual =
+    localStorage.getItem("moduloActual") || "modulos/inicio.html";
+  cargarModulo(moduloActual);
+
+  const inicializarModulos = (ruta) => {
+    // Cargar scripts específicos para cada módulo
+    if (ruta === "modulos/solicitarcita.html") {
+      LogicaSol_cita();
+    } else if (ruta === "modulos/cursos.html") {
+      LogicaCursos();
+    } else if (ruta === "modulos/inicio.html") {
+      LogicaInicio();
+    }
+  };
+
+  const LogicaCursos = () => {
+    //desactivamos los botones de el nav que no se van a utilizar
+    const nav = {
+      experiencia: document.querySelector("#exp"),
+      consultorio: document.querySelector("#cons"),
     };
 
+    nav.experiencia.style.display = "none";
+    nav.consultorio.style.display = "none";
 
+    const botones = document.querySelectorAll(".btn");
+    // recorremos la nodelist y le agregamos un evento acada boton
+    botones.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        cargarModulo("modulos/infocurso.html");
+      });
+    });
+  };
 
-    // luego creamos la funcion que carga el modulo
-    const cargarModulo = async (ruta)=>{
-        try {
-    
-            const response = await fetch(ruta);
-    
-            if(!response.ok){
-                console.log(`Error al cargar el modulo ${ruta}`);
-            }
-            
-            // convertimos la respuesta a texto
-            const html = await response.text();
-            contenedor.innerHTML = html;
-            // guardamos el modulo actual en el localstorag
-            localStorage.setItem('moduloActual', ruta);
-            // con este metodo agregamos la logica correspondiente a cada modulo.
-            inicializarModulos(ruta);
-        } catch (error) {
-            console.log(`Error al cargar el modulo ${ruta} ${error}`);
-        }
-    }
+  const LogicaSol_cita = () => {
+    //desactivamos los botones de el nav que no se van a utilizar
+    const nav = {
+      experiencia: document.querySelector("#exp"),
+      consultorio: document.querySelector("#cons"),
+    };
 
-    // cargamos los eventos respectivos para cada boton
-    botones.solicitarcita.addEventListener('click', ()=> cargarModulo('modulos/solicitarcita.html'));
-    botones.cursos.addEventListener('click', ()=> cargarModulo('modulos/cursos.html'));
-    botones.inicio.addEventListener('click', ()=> cargarModulo('modulos/inicio.html'));
-    
-    // cargar el estado guardado al recargar la pagina
-    const moduloActual = localStorage.getItem('moduloActual')|| 'modulos/inicio.html' ;
-    cargarModulo(moduloActual);
+    nav.experiencia.style.display = "none";
+    nav.consultorio.style.display = "none";
+    console.log("hola mundo");
+  };
 
-    const inicializarModulos = (ruta)=>{
-         // Cargar scripts específicos para cada módulo
-         if (ruta=== 'modulos/solicitarcita.html') {
-            
-        } else if (ruta === 'modulos/cursos.html') {
-            LogicaCursos();
-        } 
-    }
+  const LogicaInicio = () => {
+    // activamos los nav
+    //desactivamos los botones de el nav que no se van a utilizar
+    const nav = {
+      experiencia: document.querySelector("#exp"),
+      consultorio: document.querySelector("#cons"),
+    };
 
+    nav.experiencia.style.display = "block";
+    nav.consultorio.style.display = "block";
 
-    const LogicaCursos = ()=>{
-        const botones = document.querySelectorAll('.btn');
-        
-        // recorremos la nodelist y le agregamos un evento acada boton
-        botones.forEach(btn =>{
-            btn.addEventListener('click',()=>{
-                cargarModulo('modulos/infocurso.html');
-            });
-        });
-    }
-      
-
+    const boton = document.querySelector(".link-admin");
+    boton.addEventListener(
+      "click",
+      () => (location.href = "modulos/formularioiniciosesion.html")
+    );
+  };
 });
-
-
-   
-    
-
-
-
