@@ -4,7 +4,8 @@ import com.BD1.Proyectofinal.modelo.Pediatra;
 
 import java.util.List;
 
-public class PediatraDAO implements DAO<Pediatra> {
+public class PediatraDAO   implements DAO<Pediatra>    {
+
 
 
     @Override
