@@ -23,7 +23,6 @@ public class PediatraDAO implements DAO<Pediatra> {
     @Override
     public List<Pediatra> get(Long id) {
 
-        // Si quieres buscar un pediatra por su id, debes usar un marcador de parámetro
         String sql = "SELECT * FROM pediatra WHERE id = ?";
         return jdbcTemplate.query(sql, new Object[] { id }, new BeanPropertyRowMapper<>(Pediatra.class));
 
