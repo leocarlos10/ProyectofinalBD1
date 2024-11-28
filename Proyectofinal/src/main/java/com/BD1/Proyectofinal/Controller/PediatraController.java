@@ -15,7 +15,6 @@ public class PediatraController {
     @Autowired
     private PediatraDAO pediatraDAO; // Inyección automática del dao
 
-    // Cambia el mapeo para aceptar un parámetro id
     @GetMapping("api/pediatra/{id}")
     public List<Pediatra> getPediatraById(@PathVariable Long id) {
 
