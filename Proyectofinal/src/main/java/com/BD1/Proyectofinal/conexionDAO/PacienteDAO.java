@@ -19,9 +19,13 @@ public class PacienteDAO implements DAO<Paciente> {
     }
 
     @Override
-    public List<Paciente> get(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+    public List<Paciente> get(String entity) {
+        return null;
+    }
+
+    @Override
+    public List<Paciente> getAll() {
+        return null;
     }
 
     @Override
@@ -43,6 +47,5 @@ public class PacienteDAO implements DAO<Paciente> {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'actualizar'");
     }
-
 
 }
