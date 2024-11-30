@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Inicio de Sesión</title>
+    <link rel="shortcut icon" href="img/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/formulario.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div
+      class="container-fluid d-flex flex-row justify-content-center cont-form"
+    >
+      <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container container-sm container-lg">
+          <div class="container-logo">
+            <img class="logo" src="/img/Logo.png" alt="logo" />
+            <div class="container-descripcion">
+              <a href="#">Mcausilnutrition</a>
+              <a href="#">Nutricionista dietista</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class=" my-5 container-form">
+      <div class="row ">
+        <div class="col-12">
+          <div class="text-center mb-4">
+            <h1>MCausiNutrition</h1>
+          </div>
+        </div>
+        <div class="col-12">
+          <form class="p-4 border rounded Formulario">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input
+                type="text"
+                id="nombre"
+                class="form-control"
+                placeholder="Nombre"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input
+                type="password"
+                id="pass"
+                class="form-control"
+                placeholder="Contraseña"
+                required
+              />
+            </div>
+            <button class="btn btn-dark w-100 " id="btn-ingresar">Ingresar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer class="py-4">
+      <div class="container">
+        <div class="row">
+          <!-- Logo y redes sociales -->
+          <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+            <h5>MCausilNutrition</h5>
+            <p>Nutricionista dietista</p>
+            <div class="contenedor-icon">
+              <a href="#" class="icon"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="icon"><i class="bi bi-youtube"></i></a>
+              <a href="#" class="icon"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <!-- Información de contacto -->
+          <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+            <h6>Información de contacto</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class="list">Teléfonos de contacto</a></li>
+              <li>
+                <a href="#" class="list">Dirección de correo electrónico</a>
+              </li>
+              <li><a href="#" class="list">InfoCreadores</a></li>
+            </ul>
+          </div>
+
+          <!-- Enlaces de navegación -->
+          <div class="col-md-4 text-center text-md-start">
+            <h6>Explorar</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class="list">Inicio</a></li>
+              <li><a href="#" class="list">Cursos</a></li>
+              <li><a href="#" class="list">Solicitar una cita</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/form_iniciosesion.js"></script>
+  </body>
+</html>

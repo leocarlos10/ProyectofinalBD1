@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <link rel="shortcut icon" href="img/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container-fluid d-flex flex-row justify-content-center cont-form">
+      <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container container-sm container-lg contenedor-nav">
+          <div class="container-logo">
+            <img class="logo" src="/img/Logo.png" alt="logo" />
+            <div class="container-descripcion">
+              <a href="#">Mcausilnutrition</a>
+              <a href="#">Nutricionista dietista</a>
+            </div>
+          </div>
+          <div class="container-ag-curso">
+            <a href="#" class="link-admin registro-curso "> 
+              <i class="bi bi-file-plus"></i>
+              <span> Agregar curso</span>
+            </a>
+          </div>
+          <div class="container-cerrar-sesion">
+            <a href="#" class="link-admin close-sesion"> 
+              <i class="bi bi-box-arrow-right"></i>
+              <span> Cerrar sesion </span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+  <main class="flex-grow-1">
+    <!-- Experience Section -->
+    <section class="container mt-5">
+      <div class="card p-4">
+        <div class="card mb-3 border-0">
+          <div class="row g-0">
+            <div class="col-12 col-sm-4 col-md-6 col-lg-4">
+              <img src="img/imagenExp.jpeg" class="img-fluid rounded-start" alt="imagenPediatra">
+            </div>
+            <div class="col-12 col-sm-8 col-md-6 col-lg-8">
+              <div class="card-body">
+                <h3 class="card-title">Marta Lucia Causil</h3>
+                <p><strong>Especialidad:</strong> <br> Nutricionista Dietista</p>
+                <p><strong>Dirección:</strong> <br> calle 5D #38A - 35 Edif Vida Torre 1 Consultorio 731, Cali.</p>
+                <p><strong>Teléfono personal:</strong> ##########</p>
+                <div>
+                  <a href="#" class="btn btn-outline-dark btn-sm me-1"><i class="bi bi-instagram"></i></a>
+                  <a href="#" class="btn btn-outline-dark btn-sm me-1"><i class="bi bi-youtube"></i></a>
+                  <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Appointment Management Section -->
+    <section class="container mt-4">
+      <div class="card">
+
+        <div class="card-header" style="background-color: #7b45ad; color: white">
+          <h5 class="mb-0">Gestión de Citas</h5>
+        </div>
+
+        <div class="card-body">
+          <ul class="nav nav-tabs" id="tabGestion" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="agendar-tab" data-bs-toggle="tab" data-bs-target="#agendar"
+                type="button" role="tab">Citas Agendadas </button>
+            </li>
+          </ul>
+
+          <div class="tab-content mt-3" id="tabGestionContent">
+            <!-- Schedule Appointment Tab -->
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Cita 1 - Vista Presencial
+                    <div>
+                      <button class="btn btn-danger btn-sm me-2">Eliminar</button>
+                      <button class="btn btn-dark btn-sm">Editar</button>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Cita 2 - Consulta en Línea
+                    <div>
+                      <button class="btn btn-danger btn-sm me-2">Eliminar</button>
+                      <button class="btn btn-dark btn-sm">Editar</button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-4">
+    <div class="container">
+      <div class="row">
+        <!-- Logo y redes sociales -->
+        <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+          <h5>MCausilNutrition</h5>
+          <p>Nutricionista dietista</p>
+          <div class="contenedor-icon">
+            <a href="#" class="icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="icon"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="icon"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <!-- Información de contacto -->
+        <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+          <h6>Información de contacto</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" class="list">Teléfonos de contacto</a></li>
+            <li>
+              <a href="#" class="list">Dirección de correo electrónico</a>
+            </li>
+            <li><a href="#" class="list">InfoCreadores</a></li>
+          </ul>
+        </div>
+
+        <!-- Enlaces de navegación -->
+        <div class="col-md-4 text-center text-md-start">
+          <h6>Explorar</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" class="list">Inicio</a></li>
+            <li><a href="#" class="list">Cursos</a></li>
+            <li><a href="#" class="list">Solicitar una cita</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="/js/admin.js"></script>
+</body>
+</html>

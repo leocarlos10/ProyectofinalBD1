@@ -1,34 +1,31 @@
 package com.BD1.Proyectofinal.conexionDAO;
 
+import com.BD1.Proyectofinal.modelo.Curso;
 import com.BD1.Proyectofinal.modelo.Pediatra;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import java.util.List;
-
-
 @Repository
-public class PediatraDAO implements DAO<Pediatra> {
+public class CursoDAO implements DAO<Curso>{
 
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public PediatraDAO(JdbcTemplate jdbcTemplate) {
+    public CursoDAO(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    @SuppressWarnings("deprecation")
     @Override
-    public List<Pediatra> get(String nombre) {
-
-        String sql = "SELECT * FROM pediatra WHERE nombre = ?";
-         return jdbcTemplate.query(sql, new Object[] { nombre }, new BeanPropertyRowMapper<>(Pediatra.class));
+    public List<Curso> get(String entity) {
+        return null;
     }
 
     @Override
-    public List<Pediatra> getAll() {
-        return null;
+    public List<Curso> getAll() {
+        String sql = "SELECT * FROM curso ";
+        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Curso.class));
     }
 
     @Override
@@ -37,12 +34,12 @@ public class PediatraDAO implements DAO<Pediatra> {
     }
 
     @Override
-    public void registrar(Pediatra entidad) {
+    public void registrar(Curso entidad) {
 
     }
 
     @Override
-    public void actualizar(Pediatra entidad) {
+    public void actualizar(Curso entidad) {
 
     }
 }
