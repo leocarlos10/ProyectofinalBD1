@@ -1,26 +1,37 @@
 package com.BD1.Proyectofinal.modelo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
 public class Paciente {
 
-    private int id;
+    @Setter @Getter
     private int cedula;
+    @Setter @Getter
     private String nombre;
+    @Setter @Getter
     private String apellido;
+    @Setter @Getter
     private LocalDate fechaNacimiento;
+    @Setter @Getter
     private String telefono;
+    @Setter @Getter
     private LocalDate fechaUltValoracion;
+    @Setter @Getter
     private String ciudad;
+    @Setter @Getter
     private String motivoC;
+    @Setter @Getter
     private String remitente;
+    @Setter @Getter
     private int idcita;
 
     public Paciente() {
     }
 
-    public Paciente(int id , int cedula, String nombre, String apellido, LocalDate fechaNacimiento, String telefono, LocalDate fechaUltValoracion, String ciudad, String motivoC, String remitente, int idcita) {
-        this.id = id;
+    public Paciente( int cedula, String nombre, String apellido, LocalDate fechaNacimiento, String telefono, LocalDate fechaUltValoracion, String ciudad, String motivoC, String remitente, int idcita) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -30,94 +41,6 @@ public class Paciente {
         this.ciudad = ciudad;
         this.motivoC = motivoC;
         this.remitente = remitente;
-        this.idcita = idcita;
-    }
-
-    public int getId(){
-        return id;
-    }
-
-    public void setId(int id ){
-        this.id = id;
-    }
-
-    public int getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(int cedula) {
-        this.cedula = cedula;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public LocalDate getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public LocalDate getFechaUltValoracion() {
-        return fechaUltValoracion;
-    }
-
-    public void setFechaUltValoracion(LocalDate fechaUltValoracion) {
-        this.fechaUltValoracion = fechaUltValoracion;
-    }
-
-    public String getCiudad() {
-        return ciudad;
-    }
-
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
-    }
-
-    public String getMotivoC() {
-        return motivoC;
-    }
-
-    public void setMotivoC(String motivoC) {
-        this.motivoC = motivoC;
-    }
-
-    public String getRemitente() {
-        return remitente;
-    }
-
-    public void setRemitente(String remitente) {
-        this.remitente = remitente;
-    }
-
-    public int getIdcita() {
-        return idcita;
-    }
-
-    public void setIdcita(int idcita) {
         this.idcita = idcita;
     }
 }

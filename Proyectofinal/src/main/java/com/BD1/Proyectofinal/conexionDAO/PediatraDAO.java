@@ -26,6 +26,7 @@ public class PediatraDAO implements DAO<Pediatra> {
          return jdbcTemplate.query(sql, new Object[] { nombre }, new BeanPropertyRowMapper<>(Pediatra.class));
     }
 
+
     @Override
     public List<Pediatra> getAll() {
         return null;
@@ -37,9 +38,10 @@ public class PediatraDAO implements DAO<Pediatra> {
     }
 
     @Override
-    public void registrar(Pediatra entidad) {
-
+    public int registrar(Pediatra entidad) {
+        return 0;
     }
+
 
     @Override
     public void actualizar(Pediatra entidad) {

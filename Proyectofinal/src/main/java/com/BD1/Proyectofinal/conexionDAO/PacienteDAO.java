@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-
 import com.BD1.Proyectofinal.modelo.Paciente;
 
 @Repository
@@ -23,29 +22,33 @@ public class PacienteDAO implements DAO<Paciente> {
         return null;
     }
 
+
     @Override
     public List<Paciente> getAll() {
+
         return null;
     }
 
     @Override
     public boolean eliminar(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eliminar'");
+       return false;
     }
 
     @Override
-    public void registrar(Paciente paciente) {
+    public int registrar(Paciente paciente) {
+        System.out.println(paciente.getTelefono());
         String sql = "INSERT INTO paciente (cedula, nombre, apellido, fechaNacimiento, telefono, fechaUltValoracion, ciudad, motivoC, remitente, idcita) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, paciente.getCedula() , paciente.getNombre(), paciente.getApellido(),
+       int filasAfectadas =  jdbcTemplate.update(sql, paciente.getCedula() , paciente.getNombre(), paciente.getApellido(),
                 paciente.getFechaNacimiento(), paciente.getTelefono(), paciente.getFechaUltValoracion(),
                 paciente.getCiudad(), paciente.getMotivoC(), paciente.getRemitente(), paciente.getIdcita());
+        System.out.println(filasAfectadas);
+       return filasAfectadas;
     }
+
 
     @Override
     public void actualizar(Paciente entidad) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actualizar'");
     }
 
 }

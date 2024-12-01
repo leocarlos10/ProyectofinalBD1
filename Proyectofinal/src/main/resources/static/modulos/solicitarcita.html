@@ -5,11 +5,11 @@
         <div class="card mb-3 border-0">
           <div class="row g-0">
             <div class="col-12 col-sm-4 col-md-6 col-lg-4">
-              <img src="img/imagenExp.jpeg" class="img-fluid rounded-start" alt="imagenPediatra">
+              <img src="/img/img-inicio.jpg" class="img-fluid rounded-start" alt="imagenPediatra">
             </div>
-            <div class="col-12 col-sm-8 col-md-6 col-lg-8">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-8" >
               <div class="card-body">
-                <h3 class="card-title">Marta Lucia Causil</h3>
+                <h3 class="card-title">Martha Lucia Causil</h3>
                 <p><strong>Especialidad:</strong> <br> Nutricionista Dietista</p>
                 <p><strong>Dirección:</strong> <br> calle 5D #38A - 35 Edif Vida Torre 1 Consultorio 731, Cali.</p>
                 <p><strong>Teléfono personal:</strong> ##########</p>
@@ -44,7 +44,6 @@
                 role="tab">En linea </button>
             </li>
           </ul>
-
           <div class="tab-content mt-3" id="tabGestionContent">
             <!-- Schedule Appointment Tab -->
             <div class="tab-pane fade show active" id="agendar" role="tabpanel">
@@ -53,8 +52,10 @@
                   <div class="form-group">
                     <label for="servicio">Servicios:</label>
                     <select class="form-select" id="servicio">
-                      <option value=""> Visia Nutricion y dietética </option>
-                      <option value="1">Visita sucesiva de control de peso </option>
+                      <option value="Visia Nutricion y dietética"> Visia Nutricion y dietética : $90,000 </option>
+                      <option value="Visita sucesiva de control de peso">Visita sucesiva de control de peso: $90,000  </option>
+                      <option value="Asesoria para alimentacion infantil">Asesoria para alimentacion infantil : $100,000</option>
+                      <option value="lactancia materna">Consejeria de latancia materna : $100,000</option> 
                     </select>
                   </div>
                 </div>
@@ -74,23 +75,23 @@
                 <div class="col-md-6 mb-3">
                   <div class="form-group">
                     <label for="servicio">Servicios:</label>
-                    <select class="form-select" id="servicio">
-                      <option value=""> Visia Nutricion y dietética </option>
-                      <option value="1">Visita sucesiva de control de peso </option>
+                    <select class="form-select" id="servicio-linea">
+                      <option value="Consulta en linea"> Consulta en linea : $90,000  </option>
+                      <option value="Asesoria para alimentacion complementaria">Asesoria para alimentacion complementaria : $90,000 </option>
                     </select>
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
                   <div class="form-group">
                     <label for="fechaHora">Fecha y Hora:</label>
-                    <input type="datetime-local" class="form-control " id="fechaHora"
+                    <input type="datetime-local" class="form-control " id="fechaHora-linea"
                       style="font-size: 1rem;">
                   </div>
                 </div>
               </div>
             </div>
-            
           </div>
+          <button class=" btn btn-registrar-cita">Registrar</button>
         </div>
       </div>
     </section>

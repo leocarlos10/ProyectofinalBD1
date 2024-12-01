@@ -1,7 +1,6 @@
 package com.BD1.Proyectofinal.conexionDAO;
 
 import com.BD1.Proyectofinal.modelo.Curso;
-import com.BD1.Proyectofinal.modelo.Pediatra;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -22,6 +21,7 @@ public class CursoDAO implements DAO<Curso>{
         return null;
     }
 
+
     @Override
     public List<Curso> getAll() {
         String sql = "SELECT * FROM curso ";
@@ -34,9 +34,10 @@ public class CursoDAO implements DAO<Curso>{
     }
 
     @Override
-    public void registrar(Curso entidad) {
-
+    public int registrar(Curso entidad) {
+        return 0;
     }
+
 
     @Override
     public void actualizar(Curso entidad) {

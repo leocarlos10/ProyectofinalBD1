@@ -1,204 +1,4 @@
 
-// Codigo anterior
-
-// document.addEventListener('DOMContentLoaded',(event)=>{
-//     const imagen = document.querySelector('.logo');
-//     const contendor_des = document.querySelector('.container-descripcion');
-//     const evento = (cont)=>{
-//         cont.addEventListener('click',()=>{
-//             location.href = 'index.html';
-//         });
-//     }
-
-//     evento(imagen);
-//     evento(contendor_des);
-// });
-
-// forma de agregar modulos con js utilizando innerHTML y agregando html estatico
-//  document.addEventListener('DOMContentLoaded', (event) => {
-// //     const solicitar_cita = document.getElementById('sol');
-// //     // agregamos el evento
-// //     solicitar_cita.addEventListener('click', ()=>{
-// //         const contenedor = document.querySelector('.contenedor-pri');
-// //         contenedor.innerHTML = `
-// //     <main class="flex-grow-1">
-// //     <!-- Experience Section -->
-// //     <section class="container mt-5">
-// //       <div class="card p-4">
-// //         <div class="card mb-3 border-0">
-// //           <div class="row g-0">
-// //             <div class="col-12 col-sm-4 col-md-6 col-lg-4">
-// //               <img src="img/imagenExp.jpeg" class="img-fluid rounded-start" alt="imagenPediatra">
-// //             </div>
-// //             <div class="col-12 col-sm-8 col-md-6 col-lg-8">
-// //               <div class="card-body">
-// //                 <h3 class="card-title">Marta Lucia Causil</h3>
-// //                 <p><strong>Especialidad:</strong> <br> Nutricionista Dietista</p>
-// //                 <p><strong>Dirección:</strong> <br> calle 5D #38A - 35 Edif Vida Torre 1 Consultorio 731, Cali.</p>
-// //                 <p><strong>Teléfono personal:</strong> ##########</p>
-// //                 <div>
-// //                   <a href="#" class="btn btn-outline-dark btn-sm me-1"><i class="bi bi-instagram"></i></a>
-// //                   <a href="#" class="btn btn-outline-dark btn-sm me-1"><i class="bi bi-youtube"></i></a>
-// //                   <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-linkedin"></i></a>
-// //                 </div>
-// //               </div>
-// //             </div>
-// //           </div>
-// //         </div>
-// //       </div>
-// //     </section>
-
-// //     <!-- Appointment Management Section -->
-// //     <section class="container mt-4">
-// //       <div class="card">
-
-// //         <div class="card-header" style="background-color: #7b45ad; color: white">
-// //           <h5 class="mb-0">Gestión de Citas</h5>
-// //         </div>
-
-// //         <div class="card-body">
-// //           <ul class="nav nav-tabs" id="tabGestion" role="tablist">
-// //             <li class="nav-item" role="presentation">
-// //               <button class="nav-link active" id="agendar-tab" data-bs-toggle="tab" data-bs-target="#agendar"
-// //                 type="button" role="tab">Agendar Cita</button>
-// //             </li>
-// //             <li class="nav-item" role="presentation">
-// //               <button class="nav-link" id="citas-tab" data-bs-toggle="tab" data-bs-target="#citas" type="button"
-// //                 role="tab">Citas Agendadas</button>
-// //             </li>
-// //           </ul>
-
-// //           <div class="tab-content mt-3" id="tabGestionContent">
-// //             <!-- Schedule Appointment Tab -->
-// //             <div class="tab-pane fade show active" id="agendar" role="tabpanel">
-// //               <div class="row">
-// //                 <div class="col-md-6 mb-3">
-// //                   <div class="form-group">
-// //                     <label for="servicio">Servicios:</label>
-// //                     <select class="form-select" id="servicio">
-// //                       <option value="">Seleccione un servicio</option>
-// //                       <option value="1">Consulta Nutricional</option>
-// //                       <option value="2">Plan Alimenticio</option>
-// //                     </select>
-// //                   </div>
-// //                 </div>
-// //                 <div class="col-md-6 mb-3">
-// //                   <div class="form-group">
-// //                     <label for="fechaHora">Fecha y Hora:</label>
-// //                     <input type="datetime-local" class="form-control " id="fechaHora"
-// //                       style="font-size: 1rem;">
-// //                   </div>
-// //                 </div>
-// //               </div>
-// //             </div>
-
-// //             <!-- Scheduled Appointments Tab -->
-// //             <div class="tab-pane fade" id="citas" role="tabpanel">
-// //               <div class="row">
-// //                 <div class="col-md-12">
-// //                   <ul class="list-group">
-// //                     <li class="list-group-item d-flex justify-content-between align-items-center">
-// //                       Cita 1 - Vista Presencial
-// //                       <div>
-// //                         <button class="btn btn-danger btn-sm me-2">Eliminar</button>
-// //                         <button class="btn btn-dark btn-sm">Editar</button>
-// //                       </div>
-// //                     </li>
-// //                     <li class="list-group-item d-flex justify-content-between align-items-center">
-// //                       Cita 2 - Consulta en Línea
-// //                       <div>
-// //                         <button class="btn btn-danger btn-sm me-2">Eliminar</button>
-// //                         <button class="btn btn-dark btn-sm">Editar</button>
-// //                       </div>
-// //                     </li>
-// //                   </ul>
-// //                 </div>
-// //               </div>
-// //             </div>
-// //           </div>
-// //         </div>
-// //       </div>
-// //     </section>
-// //   </main>
-// //         `;
-// //     });
-
-// //     // ahora agregamos el codigo para el apartado de cursos
-// //     const cursos = document.querySelector('#cursos');
-// //     cursos.addEventListener('click',()=>{
-// //         const contenedor = document.querySelector('.contenedor-pri');
-// //         contenedor.innerHTML = `
-// //              <div class="container py-5">
-// //     <h1 >Cursos</h1>
-// //     <p class="descripcion">¿Necesitas mejorar tu alimentación? Estas en el lugar correcto, encuentra tu curso aquí. </p>
-
-// //     <div class="row g-4">
-// //       <div class="col-md-4">
-// //         <div class="card h-100 ">
-// //           <div class="card-body">
-// //             <div class="placeholder-image mb-3"></div>
-// //             <h5 class="card-title">Title</h5>
-// //             <p class="card-text">Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story.</p>
-// //             <a href="#" class="btn btn-dark">Ver más</a>
-// //           </div>
-// //         </div>
-// //       </div>
-
-// //       <div class="col-md-4">
-// //         <div class="card h-100 ">
-// //           <div class="card-body">
-// //             <div class="placeholder-image mb-3"></div>
-// //             <h5 class="card-title">Title</h5>
-// //             <p class="card-text">Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story.</p>
-// //             <a href="#" class="btn btn-dark">Ver más</a>
-// //           </div>
-// //         </div>
-// //       </div>
-// //       <div class="col-md-4">
-// //         <div class="card h-100 ">
-// //           <div class="card-body">
-// //             <div class="placeholder-image mb-3"></div>
-// //             <h5 class="card-title">Title</h5>
-// //             <p class="card-text">Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story.</p>
-// //             <a href="#" class="btn btn-dark">Ver más</a>
-// //           </div>
-// //         </div>
-// //       </div>
-// //       <div class="col-md-4">
-// //         <div class="card h-100 ">
-// //           <div class="card-body">
-// //             <div class="placeholder-image mb-3"></div>
-// //             <h5 class="card-title">Title</h5>
-// //             <p class="card-text">Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story.</p>
-// //             <a href="#" class="btn btn-dark">Ver más</a>
-// //           </div>
-// //         </div>
-// //       </div>
-// //       <div class="col-md-4">
-// //         <div class="card h-100 ">
-// //           <div class="card-body">
-// //             <div class="placeholder-image mb-3"></div>
-// //             <h5 class="card-title">Title</h5>
-// //             <p class="card-text">Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story.</p>
-// //             <a href="#" class="btn btn-dark">Ver más</a>
-// //           </div>
-// //         </div>
-// //       </div>
-// //       <div class="col-md-4">
-// //         <div class="card h-100 ">
-// //           <div class="card-body">
-// //             <div class="placeholder-image mb-3"></div>
-// //             <h5 class="card-title">Title</h5>
-// //             <p class="card-text">Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story.</p>
-// //             <a href="#" class="btn btn-dark">Ver más</a>
-// //           </div>
-// //         </div>
-// //       </div>
-// //     </div>
-// //   </div>
-// //         `;
-// //     });
-// });
 
 // codigo para agregar los modulos dinamicamente mediante un fetch
 
@@ -325,7 +125,56 @@ document.addEventListener('DOMContentLoaded',(event)=>{
 
         nav.experiencia.style.display = 'none';
         nav.consultorio.style.display = 'none';
-        console.log('hola mundo');
+
+        // Logica para el control de el Registo de citas 
+        
+        const boton = document.querySelector('.btn-registrar-cita');
+        boton.addEventListener('click',()=>{
+            RegistrarCita();
+        });
+
+    }
+
+    const RegistrarCita = async ()=>{
+        const btn_presencial = document.querySelector('#agendar-tab');
+        const btn_enlinea = document.querySelector('#citas-tab');
+
+        const is_presencial_selected =  btn_presencial.getAttribute('aria-selected');
+        const is_enlinea_selected = btn_enlinea.getAttribute('aria-selected');
+
+        let cita = {} 
+
+        if(is_presencial_selected === 'true'){
+            cita.servicio = document.querySelector('#servicio').value;
+            cita.fechahora = document.querySelector('#fechaHora').value;
+        } else if(is_enlinea_selected === 'true'){
+            cita.servicio = document.querySelector('#servicio-linea').value;
+            cita.fechahora = document.querySelector('#fechaHora-linea').value;
+        } else {
+            cita.servicio = document.querySelector('#servicio').value;
+            cita.fechahora = document.querySelector('#fechaHora').value
+        }
+
+        console.log(cita);
+
+        // aplicamos el fetch al endpoitn de cita
+        const request = await fetch ('api/cita',{
+            method : 'POST',
+            headers : {
+                'Accept' : 'application/json',
+               'Content-Type' : 'application/json'
+            },
+            body : JSON.stringify(cita)
+        });
+
+        const response = await request.json();
+
+        if(request.status == 200){
+            localStorage.setItem('id',response.id);
+            location.href = 'formularioRegistro.html';
+        }else{
+            alert(response.respuesta);
+        }
     }
 
     const LogicaInicio = ()=>{
