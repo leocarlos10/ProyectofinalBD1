@@ -32,7 +32,6 @@ public class CitaController {
 
     }
 
-
     @PostMapping("api/cita")
     public ResponseEntity<?> RegistrarCita (@RequestBody Cita cita) {
         // registramos la cita.
