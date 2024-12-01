@@ -21,9 +21,25 @@ public class CitaPacienteDAO {
     }
 
     public List<CitaPacienteDTO> getCitasPacientes() {
-        String sql = "SELECT cita.idCita, cita.fechahora, paciente.nombre, paciente.telefono, paciente.fechaUltValoracion, paciente.motivoC, paciente.remitente " +
-                     "FROM paciente " +
-                     "INNER JOIN cita ON paciente.idcita = cita.idCita";
+
+        String sql = """
+                    SELECT
+                    cita.idCita,
+                    cita.fechahora,
+                    cita.servicio,
+                    paciente.nombre,
+                    paciente.telefono,
+                    paciente.fechaUltValoracion,
+                    paciente.motivoC,
+                    paciente.remitente
+                FROM
+                    paciente
+                INNER JOIN
+                    cita
+                ON
+                    paciente.idcita = cita.idCita;
+                """;
+
         return jdbcTemplate.query(sql, new CitaPacienteRowMapper());
     }
 
