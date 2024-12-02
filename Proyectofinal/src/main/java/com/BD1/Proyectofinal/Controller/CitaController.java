@@ -40,4 +40,19 @@ public class CitaController {
             response.put("id",id);
             return  ResponseEntity.ok(response);
     }
+
+    @DeleteMapping("api/cita/{id}")
+    public ResponseEntity<String> eliminarCita(@PathVariable("id") Long idCita) {
+        try {
+            boolean delete =  citaDAO.eliminar(idCita);
+            if (delete){
+                return new ResponseEntity<>("Cita eliminada con éxito", HttpStatus.OK);
+            }else{
+                return new ResponseEntity<>("Error al eliminar la cita", HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+          
+        } catch (Exception e) {
+            return new ResponseEntity<>("Error al eliminar la cita", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

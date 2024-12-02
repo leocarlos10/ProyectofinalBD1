@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin</title>
   <link rel="shortcut icon" href="img/Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/admin.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
+
 <body>
   <div class="container-fluid d-flex flex-row justify-content-center cont-form">
-      <nav class="navbar navbar-expand-md navbar-light">
-        <div class="container container-sm container-lg contenedor-nav">
-          <div class="container-logo">
-            <img class="logo" src="/img/Logo.png" alt="logo" />
-            <div class="container-descripcion">
-              <a href="#">Mcausilnutrition</a>
-              <a href="#">Nutricionista dietista</a>
-            </div>
-          </div>
-          <div class="container-ag-curso d-none">
-            <a href="#" class="link-admin registro-curso "> 
-              <i class="bi bi-file-plus"></i>
-              <span> Agregar curso</span>
-            </a>
-          </div>
-          <div class="container-cerrar-sesion">
-            <a href="#" class="link-admin close-sesion"> 
-              <i class="bi bi-box-arrow-right"></i>
-              <span> Cerrar sesion </span>
-            </a>
+    <nav class="navbar navbar-expand-md navbar-light">
+      <div class="container container-sm container-lg contenedor-nav">
+        <div class="container-logo">
+          <img class="logo" src="/img/Logo.png" alt="logo" />
+          <div class="container-descripcion">
+            <a href="#">Mcausilnutrition</a>
+            <a href="#">Nutricionista dietista</a>
           </div>
         </div>
-      </nav>
-    </div>
+        <div class="container-ag-curso d-none">
+          <a href="#" class="link-admin registro-curso ">
+            <i class="bi bi-file-plus"></i>
+            <span> Agregar curso</span>
+          </a>
+        </div>
+        <div class="container-cerrar-sesion">
+          <a href="#" class="link-admin close-sesion">
+            <i class="bi bi-box-arrow-right"></i>
+            <span> Cerrar sesion </span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
 
   <main class="flex-grow-1">
     <!-- Experience Section -->
@@ -53,7 +56,8 @@
                 <p><strong>Especialidad:</strong> <br> Nutricionista Dietista</p>
                 <p><strong>Dirección:</strong> <br> calle 5D #38A - 35 Edif Vida Torre 1 Consultorio 731, Cali.</p>
                 <div>
-                  <a href="https://www.instagram.com/mcausilnutrition/" target="_blank" class="btn btn-outline-dark btn-sm me-1"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.instagram.com/mcausilnutrition/" target="_blank"
+                    class="btn btn-outline-dark btn-sm me-1"><i class="bi bi-instagram"></i></a>
                   <a href="#" class="btn btn-outline-dark btn-sm"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
@@ -63,39 +67,34 @@
       </div>
     </section>
 
-    <!-- Appointment Management Section -->
-    <section class="container mt-4">
-      <div class="card">
+   <!-- Appointment Management Section -->
+<section class="container mt-5">
+  <div class="card shadow-lg border-0 rounded">
+    <div class="card-header bg-primary text-white text-center">
+      <h5 class="mb-0">Gestión de Citas</h5>
+    </div>
 
-        <div class="card-header" style="background-color: #7b45ad; color: white">
-          <h5 class="mb-0">Gestión de Citas</h5>
-        </div>
+    <div class="card-body">
+      <h5 class="mb-4">Citas Agendadas</h5>
 
-        <div class="card-body">
-          <ul class="nav nav-tabs" id="tabGestion" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="agendar-tab" data-bs-toggle="tab" data-bs-target="#agendar"
-                type="button" role="tab">Citas Agendadas </button>
-            </li>
-          </ul>
-
-          <div class="tab-content mt-3" id="tabGestionContent">
-            <!-- Schedule Appointment Tab -->
-            <div class="row">
-              <div class="col-md-12">
-                <button id="btnCargarCitas" ">Cargar Citas</button>
-                <ul class="list-group" id="citasList" >
-                </ul>
-              </div>
-            </div>
-            </div>
+      <!-- Lista de citas -->
+      <div class="tab-content mt-3">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- Aquí se cargarán las citas dinámicamente -->
+            <ul class="list-group" id="citasList">
+              <!-- Elementos de citas se agregarán aquí -->
+            </ul>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
   </main>
 
-  <footer class="py-4">
+  <footer class=" py-4">
     <div class="container">
       <div class="row">
         <!-- Logo y redes sociales -->
@@ -103,7 +102,8 @@
           <h5>MCausilNutrition</h5>
           <p>Nutricionista dietista</p>
           <div class="contenedor-icon">
-            <a href="https://www.instagram.com/mcausilnutrition/" target="_blank" class="icon"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.instagram.com/mcausilnutrition/" target="_blank" class="icon"><i
+                class="bi bi-instagram"></i></a>
             <a href="#" class="icon"><i class="bi bi-youtube"></i></a>
             <a href="#" class="icon"><i class="bi bi-linkedin"></i></a>
           </div>
@@ -133,7 +133,8 @@
       </div>
     </div>
   </footer>
-  
+
   <script src="/js/admin.js"></script>
 </body>
+
 </html>

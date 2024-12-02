@@ -1,6 +1,4 @@
-
-document.addEventListener('DOMContentLoaded', (event) => {
-
+document.addEventListener('DOMContentLoaded', () => {
     const btn_cerrar_sesion = document.querySelector('.close-sesion');
     btn_cerrar_sesion.addEventListener('click', () => {
         localStorage.removeItem('pediatra');
@@ -11,48 +9,68 @@ document.addEventListener('DOMContentLoaded', (event) => {
     btn_resgistrar_curso.addEventListener('click', () => {
         location.href = 'registro_curso.html';
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    const btnCargarCitas = document.getElementById('btnCargarCitas');
     const citasList = document.getElementById('citasList');
+    const endpoint = "http://localhost:8080/api/getcitaspacientes";
 
-    btnCargarCitas.addEventListener('click', () => {
+    // Realizar la solicitud fetch
+    fetch(endpoint)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json(); // Convertir la respuesta a JSON
+        })
+        .then(data => {
+            // Limpiar el contenedor de citas antes de agregar nuevas
+            citasList.innerHTML = '';
 
-        const endpoint = "http://localhost:8080/api/getcitaspacientes";
-
-        fetch(endpoint)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log(data); 
-
-                citasList.innerHTML = '';
-                const citasHTML = data.map(cita => `
+            // Generar el HTML para las citas
+            let citasHTML = '';
+            for (let cita of data) {
+                citasHTML += `
                     <li class="list-group-item d-flex justify-content-between align-items-center" data-id="${cita.idCita}">
-                        ${cita.servicio} - ${cita.nombre} (${cita.telefono})
+                        Servicio: ${cita.servicio} <br> 
+                        Paciente: ${cita.nombre} <br> 
+                        Cell:  (${cita.telefono}) <br>
+                        Motivo: ${cita.motivoC}
                         <div>
                             <button class="btn btn-danger btn-sm me-2 btn-eliminar" onclick="eliminarCita(${cita.idCita})">Eliminar</button>
-                            <button class="btn btn-dark btn-sm btn-editar" onclick="editarCita(${cita.idCita})">Editar</button>
                         </div>
                     </li>
-                `).join('');
-                citasList.innerHTML = citasHTML;
-            })
-            .catch(error => {
-                console.error('Error al cargar las citas:', error);
-            });
-    });
+                `;
+            }
+
+            // Insertar el HTML generado en el contenedor
+            citasList.innerHTML = citasHTML;
+        })
+        .catch(error => {
+            console.error('Error al cargar las citas:', error);
+            alert('No se pudieron cargar las citas.');
+        });
 });
 
+// Función para eliminar una cita
 function eliminarCita(idCita) {
-    alert(`Eliminar cita con ID: ${idCita}`);
-}
-
-function editarCita(idCita) {
-    alert(`Editar cita con ID: ${idCita}`);
+    const endpoint = `http://localhost:8080/api/cita/${idCita}`;  // URL del endpoint de la API
+    
+    // Realizamos una solicitud DELETE para eliminar la cita
+    fetch(endpoint, {
+        method: 'DELETE',  // Método DELETE para eliminar el recurso
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            alert(`Cita con ID ${idCita} eliminada con éxito.`);
+            // Opcional: refrescar la lista de citas o eliminarla del DOM
+            location.reload();  // Recargar la página para actualizar la lista de citas
+        } else {
+            throw new Error('Error al eliminar la cita');
+        }
+    })
+    .catch(error => {
+        console.error('Error al eliminar la cita:', error);
+    });
 }

@@ -37,7 +37,14 @@ public class CitaDAO implements DAO<Cita> {
 
     @Override
     public boolean eliminar(Long id) {
-        return false;
+        String sql = "DELETE FROM cita WHERE idCita = ?";
+        try {
+            int rowsAffected = jdbcTemplate.update(sql, id);
+            return rowsAffected > 0;  // Retorna true si la cita fue eliminada
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;  // Retorna false si ocurrió un error
+        }   
     }
     // el metodo guarda la cita y devuelve el id de esa misma cita para usarlo en el frontend
     @Override
